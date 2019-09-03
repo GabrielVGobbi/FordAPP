@@ -183,15 +183,17 @@ android {
         pickFirst '**/arm64-v8a/libc++_shared.so'
         pickFirst '**/x86_64/libc++_shared.so'
         pickFirst '**/x86/libjsc.so'
-        pickFirst '**/armeabi-v7a/libjsc.so'
+        pickFirst '**/libjsc.so'
     }
 }
 
 dependencies {
+    implementation project(':react-native-geolocation-service')
     implementation project(':react-native-maps')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.google.android.gms:play-services-location:16.0.0"
 
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";

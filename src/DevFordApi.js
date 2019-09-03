@@ -26,3 +26,20 @@ export const makeLogin = function (email, password) {
 
     });
 };
+
+//buscar o endereço pedido
+export const makeLocationSearch = function (locTxt) {
+
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            let array = [
+                {id:1, label:'Rua Eleonor, 144',lat:-10, lng:-11},
+                {id:2, label:'Rua Sidombas, 445',lat:-30, lng:-21},
+                {id:3, label:'Rua Joaquim, 333',lat:-40, lng:-31},
+
+            ];
+            resolve(array); 
+        }, 200);
+
+    });
+};
