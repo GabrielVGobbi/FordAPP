@@ -43,6 +43,8 @@ export class Home extends Component {
         this.setWarning = this.setWarning.bind(this);
         this.getCurrentLocation = this.getCurrentLocation.bind(this);
         this.requestLocPermission = this.requestLocPermission.bind(this);
+        this.searchBoxClick = this.searchBoxClick.bind(this);
+
 
     }
 
@@ -151,6 +153,10 @@ export class Home extends Component {
         
     }
 
+    searchBoxClick(item){
+        alert("clicou em "+ item.label);
+    }
+
 
     render(){
         return (
@@ -167,7 +173,7 @@ export class Home extends Component {
                     </Animated.View>
                } 
 
-               <SearchBox />
+               <SearchBox dataClick={this.searchBoxClick} />
             </View>
         );
     }
